@@ -1,6 +1,11 @@
 import express from 'express';
 
+import PointsController from './controllers/PointsContoller';
+import ItemsController from './controllers/itemsController';
+
 const routes = express.Router();
+const pointsContoller = new PointsController();
+const itemsController = new ItemsController();
 // Rota: endereço completo da requisição
 // Recurso: Qual entidade estamos acessando no sistema
 
@@ -10,8 +15,9 @@ const routes = express.Router();
 
 // const fillteredUsers = search ? users.filter(user => user.includes(search)) : users;
 
-routes.get('/', (request, response) => {
-    return response.json({ message: "Hello World"});
-})
+routes.get('/items', itemsController.index);
+routes.post('/points', pointsContoller.create);
+routes.get('/points', pointsContoller.index);
+routes.get('/points/:id', pointsContoller.show);
 
 export default routes;
