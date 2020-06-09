@@ -9,6 +9,7 @@
     <li>Abstração de Querys com Knex</li>
     <li>Lib de Maps com leaflet e react-native-maps</li>
 </ul>
+
 ## Demo
 ### APP
 ![ecoleta-app](ecoleta-app.gif)
